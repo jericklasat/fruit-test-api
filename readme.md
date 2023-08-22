@@ -1,6 +1,8 @@
 <h2>Initial Setup</h2>
 
+Install docker your machine.\
 Execute:
+  - <code>cp .env.save .env</code> and make sure to update necessary credentials
   - <code>make-deploy</code>
   - <code>make migrate</code>
 
