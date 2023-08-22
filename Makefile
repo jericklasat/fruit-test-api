@@ -7,6 +7,9 @@ deploy:
 	make generate-certificates
 	make composer-install
 
+copy-env:
+	./bin/env.sh
+
 build:
 	docker-compose build
 
@@ -55,6 +58,7 @@ create-migration-diff:
 generate-certificates:
 	docker exec ${CONTAINER} bash -c "openssl genrsa -out config/jwt/private.pem 4096"
 	docker exec ${CONTAINER} bash -c "openssl rsa -in config/jwt/private.pem -pubout -out config/jwt/public.pem"
+	docker exec ${CONTAINER} bash -c "chmod 777 -R config/jwt"
 
 import-fruits:
 	docker exec ${CONTAINER} bash -c "php bin/console import:fruits $(type)"
