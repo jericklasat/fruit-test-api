@@ -2,6 +2,7 @@ CONTAINER := fruit-test-api
 MYSQL_CONTAINER := fruit-test-db
 
 deploy:
+	make copy-env
 	make build
 	make start
 	make generate-certificates
