@@ -17,7 +17,8 @@ class UserService
     private UserAccountRepository $repository,
     private UserFavoriteFruitRepository $userFavoriteFruitRepository,
     private JWTTokenManagerInterface $jWTTokenManager,
-  ){}
+  ) {
+  }
 
   public function create(string $emailAddress, string $password): bool
   {
@@ -28,7 +29,7 @@ class UserService
 
   public function login(string $emailAddress, string $password): array
   {
-    $user = $this->repository->findOneBy((['emailAddress' => $emailAddress]));
+    $user = $this->repository->findByEmailAddress($emailAddress);
 
     if (null == $user) {
       return ['message' => 'User account not found for email: ' . $emailAddress];

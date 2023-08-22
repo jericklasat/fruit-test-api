@@ -48,6 +48,14 @@ class UserAccountRepository extends ServiceEntityRepository
         return $user->getId();
     }
 
+    public function findByEmailAddress(string $emailAddress): ?UserAccount
+    {
+        return $this->findOneBy([
+            'emailAddress' => $emailAddress,
+            'deletedAt' => null
+        ]);
+    }
+
     public function isExisting(string $emailAddress): bool
     {
         $user = $this->findOneBy([

@@ -58,3 +58,7 @@ generate-certificates:
 
 import-fruits:
 	docker exec ${CONTAINER} bash -c "php bin/console import:fruits $(type)"
+
+codecept:
+	docker exec ${CONTAINER} bash -c "php vendor/bin/codecept run $(filter-out $@,$(MAKECMDGOALS))"
+	

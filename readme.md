@@ -15,3 +15,10 @@ Optionally if you want to see all the logs in the terminal you can use: <code>ma
 
 <h2>Imports</h2>
 To import fruits run: <code>make import-fruits type=all</code>
+
+<h2>Testing</h2>
+Execute:
+
+  - All test: <code>make codecept</code>
+  - All in specific folder test(ex:): <code>make codecept tests/unit/fruit</code>
+  - Specific file test(ex:): <code>make codecept tests/unit/fruit/FruitTest.php</code>

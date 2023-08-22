@@ -32,6 +32,13 @@ class UserAccount implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->id;
     }
 
+    public function setId(int $id): static
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
     public function getEmailAddress(): ?string
     {
         return $this->emailAddress;
