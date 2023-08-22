@@ -2,9 +2,10 @@
 
 Install docker your machine.\
 Execute:
-  - <code>cp .env.save .env</code> and make sure to update necessary credentials
   - <code>make-deploy</code>
   - <code>make migrate</code>
+
+The clear cache will print an error due to incomplete credentials like the smtp, please update necessary .env and restart the container 
 
 Note: If the pem files can't be access run <code>sudo chmod 775</code> (or 777)<code> -R config/jwt/</code>
 
